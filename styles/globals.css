@@ -1,107 +1,131 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk&family=Lobster+Two:ital@1&display=swap");
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	border: 0;
+	margin: 0;
+	padding-inline: 0;
+	font-family: "Hanken Grotesk", sans-serif;
+	list-style-type: none;
+	/* Variables */
+	/* Colors */
+	--color-light: #ffffff;
+	--color-secundary: #292019;
+	/* Font Size */
+	--fs-semi-regular: 0.9rem;
+	--fs-regular: 1rem;
+	--fs-semi-large: 1.5rem;
+	--fs-large: 2rem;
+	--fs-larger: 3rem;
+	--fs-extra-large: 4rem;
+	--fs-extra-larger: 5rem;
+	/* Font weight */
+	--fw-light: 400;
+	--fw-bold: 800;
+	/* Background color for containers */
+	--bg-secondary-light: #fff4e8;
+	--bg-primary-light: #fae2c8;
+	--bg-primary-dark: #c4a586;
+	/* Gaps */
+	--gap-mobile: .5rem;
+	--gap-desktop: 3rem;
+	/* Paddings */
+	--padding-regular: 1rem;
+	/* Components that shares data */
+	--header-size: 125px;
+	--footer-size: 100px;
+	box-sizing: border-box;
+	color: inherit;
 }
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+	max-width: 100vw;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+#__next {
+	overflow-x: hidden;
 }
-
 a {
-  color: inherit;
-  text-decoration: none;
+	text-decoration: none;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+section,
+footer {
+	position: relative;
+	/* padding: var(--padding-regular) 0; */
+}
+h2 {
+	font-size: inherit;
+	/* margin: 1rem 0; */
+}
+h3 {
+	text-transform: uppercase;
+	width: 100%;
+	text-align: center;
+}
+span {
+	text-transform: lowercase;
+}
+/* Removing button default properties for better styling */
+button {
+	background: transparent;
+	text-align: start;
+	font-size: var(--fs-regular);
+	color: var(--color-secundary);
+}
+/* Custom button for most visible buttons */
+.button {
+	padding: 1rem;
+	background-color: var(--bg-primary-dark);
+	color: var(--color-light);
+	font-size: var(--fs-semi-regular);
+	border-radius: 1000rem;
+}
+/* Common list */
+ul {
+	display: flex;
+	gap: var(--gap-mobile);
+	align-items: center;
+	padding: var(--padding-regular) 0;
+}
+ul::-webkit-scrollbar {
+	display: none;
+}
+li {
+	cursor: pointer;
+	padding: var(--gap-mobile);
+}
+li:hover {
+	font-weight: var(--fw-bold);
+}
+.active_li {
+	font-weight: var(--fw-bold);
+}
+.arrow_wrapper {
+	position: absolute;
+	z-index: 1;
+	padding: 0.8rem;
+	cursor: pointer;
+	background-color: #fff;
+	border-radius: 50%;
+	top: calc(50% - 10px);
+	left: 10px;
+}
+.arrow {
+	border: 1px solid black;
+	border-bottom: none;
+	border-left: none;
+	width: 10px;
+	height: 10px;
+	translate: 3px;
+	rotate: -135deg;
+}
+/* Complementary class for arrow. Pointing to the other side */
+.right {
+	left: unset;
+	right: 10px;
+	rotate: 180deg;
+}
+@media (min-width: 768px) {
+	ul {
+		gap: var(--gap-desktop);
+	}
+}
+@media (min-width: 40em) {
 }
