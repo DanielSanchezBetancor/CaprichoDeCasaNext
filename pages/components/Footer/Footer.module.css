@@ -1,0 +1,12 @@
+.footer {
+    height: var(--footer-size);
+    padding: 2rem 1rem;
+    background-color: var(--bg-primary-light);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer__social_icons {
+    display: flex;
+    gap: 2rem;
+}

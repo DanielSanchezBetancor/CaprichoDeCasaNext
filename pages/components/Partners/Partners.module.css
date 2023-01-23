@@ -1,0 +1,8 @@
+.partners {
+    font-size: 12px;
+    margin-top: 5rem;
+}
+.partners__image {
+    display: flex;
+    justify-content: center;
+}

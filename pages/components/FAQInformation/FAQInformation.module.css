@@ -1,0 +1,11 @@
+.faq_information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.faq_information h1 {
+    margin-bottom: 1rem;
+}

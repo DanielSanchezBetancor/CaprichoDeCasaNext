@@ -1,0 +1,98 @@
+/* Hero page with paddings to create a little extra container for the image */
+.hero_page {
+	background-image: url("/hero-page-bg.jpg");
+	background-size: cover;
+	background-position-x: right;
+	background-position-y: bottom;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: calc(var(--header-size) * -1);
+}
+.information {
+	width: 80vw;
+	text-align: center;
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.hero_page h1 {
+	font-size: var(--fs-semi-large);
+	color: var(--color-secundary);
+	word-spacing: -2px;
+}
+/* Subinformation hidden in mobile for better appearance */
+.hero_page__subinformation {
+	display: none;
+	font-size: var(--fs-regular);
+}
+.search_container {
+	--icon-size: 25px;
+	--icon-distance: 15px;
+	background-color: white;
+	padding: 0.5rem 0;
+	border-radius: 100vh;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	width: 80vw;
+}
+.search_container:focus-within,
+.search_container:hover {
+	box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.3);
+}
+.search_container input {
+	width: calc(100% - var(--icon-distance));
+	background-color: transparent;
+	outline: 0;
+}
+.search_container input::placeholder {
+	text-align: center;
+}
+.search_container button {
+	position: absolute;
+	right: var(--icon-distance);
+	background: none;
+	padding: 0;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	cursor: pointer;
+}
+.information__layout {
+    --distance: 50px;
+    display: grid;
+    font-size: var(--fs-semi-large);
+}
+.information__layout span {
+    text-transform: revert;
+}
+.information_right {
+    margin-left: var(--distance);
+}
+.information_left {
+    margin-right: var(--distance);
+}
+@media (min-width: 80em) {
+    .information__layout {
+        --distance: 100px;
+        font-size: var(--fs-larger);
+        color: var(--color-secundary);
+        word-spacing: -2px;
+    }
+    .hero_page__subinformation {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+	.search_container {
+		width: 40vw;
+	}
+    .search_container input {
+        padding: .7rem 1rem;
+    }
+}

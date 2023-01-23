@@ -1,0 +1,79 @@
+.navbar {
+    height: 125px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar__logo {
+    font-family: "Lobster Two", cursive;
+}
+.navbar__elements {
+    display: flex;
+    gap: 3rem;
+    font-size: 16px;
+}
+.navbar__elements li {
+    position: relative;
+    cursor: pointer;
+}
+/* Border that transitions under each element */
+.navbar__elements li:after {
+    content: '';
+    width: 0;
+    border-bottom: solid 2px #000;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.2s ease;
+}
+.navbar__elements li:hover:after {
+    width: 100%;
+}
+.navbar__social_icons {
+    display: flex;
+    gap: 2rem;
+}
+/* Active element in the menu */
+/* Default value without pointer */
+.navbar__elements li.navbar__element__active:after { 
+    width: 100%;
+    transition-delay: 0.1s;
+}
+/* Value on pointer on other element */
+.navbar__elements:hover li.navbar__element__active:after {
+    width: 0;
+}
+/* Value on pointer on same element */
+.navbar__elements:hover li.navbar__element__active:hover:after {
+    width: 100%;
+}
+.navbar__hamburguer {
+    display: none;
+}
+@media (max-width: 660px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .navbar__hamburguer {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 30px;
+    }
+    .navbar__elements {
+        display: none;
+        flex-direction: column;
+    }
+    .navbar__social_icons {
+        display: none;
+    }
+}
+@media (max-width: 826px) { 
+    .navbar__elements {
+        gap: 1rem;
+    }
+}

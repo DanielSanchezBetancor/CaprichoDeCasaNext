@@ -1,0 +1,30 @@
+.item_card {
+    background-color: var(--bg-secondary-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: var(--gap-mobile);
+    padding: var(--padding-regular) 0;
+}
+.item_card h2 {
+    font-weight: 800;
+}
+.item_card h3 {
+    font-weight: 400;
+}
+.item_card button {
+    background-color: #d9ab82;
+    border-radius: 0;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-weight: 400;
+    box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 25%);
+}
+.item_card__product_image {
+    aspect-ratio: 2/1;
+}

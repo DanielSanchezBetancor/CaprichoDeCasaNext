@@ -1,0 +1,36 @@
+.search_panel {
+	border: 1px solid red;
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr;
+    height: calc(100vh - var(--header-size) - var(--footer-size));
+
+}
+
+.lateral_menu {
+	border: 1px solid blue;
+	display: flex;
+	flex-direction: column;
+    overflow: scroll;
+    height: inherit;
+}
+.lateral_menu::-webkit-scrollbar {
+    display: none;
+}
+.product_panel {
+	border: 1px solid yellow;
+}
+
+.product_preview {
+	border: 1px solid green;
+}
+.list {
+	display: none;
+	flex-direction: column;
+}
+
+.list[data-active="true"] {
+    display: flex;
+}
+.subcategories {
+
+}

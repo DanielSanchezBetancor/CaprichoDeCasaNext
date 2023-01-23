@@ -1,0 +1,103 @@
+/* Header container */
+.header {
+	--navbar-width: 200px;
+	--z-index: 2;
+	height: var(--header-size);
+	width: 100%;
+	padding: var(--padding-regular);
+	display: flex;
+	justify-content: space-between;
+	z-index: var(--z-index);
+	position: relative;
+	background: transparent;
+}
+/* Reducing logo image to match header since it kinda weird + Matching outter column space */
+.header__logo,
+.social_icons {
+    width: var(--header-size);
+}
+.lateral_menu {
+	z-index: var(--z-index);
+}
+/* Cleaning default button values */
+.header button {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+}
+/* Navbar list */
+.navbar {
+	width: var(--navbar-width);
+	transform: translateX(var(--navbar-width));
+	padding: 1rem;
+	height: calc(100vh - 1px);
+	position: absolute;
+	top: 0;
+	right: 0;
+	background-color: #fff;
+	transition: transform 400ms ease;
+}
+.navbar__elements {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+/* Social icons */
+.social_icons {
+    display: flex;
+    gap: 1rem;
+	justify-content: space-evenly;
+	position: absolute;
+	right: 35px;
+	top: 350px;
+	transform: translateX(var(--navbar-width));
+	transition: transform 400ms ease;
+	z-index: var(--z-index);
+}
+.icon {
+	--size-icon: 30px;
+	width: var(--size-icon);
+	height: var(--size-icon);
+}
+@media (max-width: 40em) {
+	/* Hamburger in mobile */
+	.lateral_menu:focus .navbar,
+	.lateral_menu:focus-within .navbar,
+	.lateral_menu:hover .navbar {
+		transform: translateX(0);
+		box-shadow: -400px 200px 0px 200px rgba(0,0,0,0.4);
+	}
+	/* Social icons in mobile */
+	.lateral_menu:focus + .social_icons,
+	.lateral_menu:focus-within + .social_icons,
+	.lateral_menu:hover + .social_icons {
+        transform: translateX(0);
+	}
+}
+@media (min-width: 40em) {
+	.header {
+		justify-content: space-around;
+		align-items: center;
+	}
+	/* Mobile items */
+	.btn__hamburguer,
+	.icon_close_menu {
+		display: none;
+	}
+	.lateral_menu {
+		display: flex;
+	}
+	.navbar,
+    .social_icons {
+		position: revert;
+		width: auto;
+		height: auto;
+		background-color: transparent;
+		transform: translateX(0);
+	}
+	.navbar__elements {
+		flex-direction: row;
+	}
+}
